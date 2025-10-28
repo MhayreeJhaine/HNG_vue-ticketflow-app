@@ -1,6 +1,7 @@
 <script setup>
+import Footer from "../components/footer.vue";
 import Hero from "../components/hero.vue";
-import Footer from "../components/Footer.vue";
+// import Footer from "../components/footer.vue";
 import { ref } from "vue";
 
 const page = ref("dashboard"); // for active link
@@ -67,7 +68,7 @@ const page = ref("dashboard"); // for active link
         </div>
       </section>
     </main>
-
     <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
