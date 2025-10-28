@@ -1,5 +1,5 @@
 <script setup>
-import Hero from "../components/Hero.vue";
+import Hero from "../components/hero.vue";
 import Footer from "../components/Footer.vue";
 import { ref } from "vue";
 
