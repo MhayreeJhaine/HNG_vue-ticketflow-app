@@ -69,6 +69,5 @@ const page = ref("dashboard"); // for active link
       </section>
     </main>
     <Footer />
-    <!-- <Footer /> -->
   </div>
 </template>

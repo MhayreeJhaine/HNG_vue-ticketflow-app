@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import Header from "../components/Header.vue";
+import Header from "../components/header.vue";
 
 // Ticket form state
 const tickets = ref([]);
