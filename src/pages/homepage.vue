@@ -150,8 +150,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
-import Hero from "../components/Hero.vue";
-import Footer from "../components/Footer.vue";
+import Hero from "../components/hero.vue";
+import Footer from "../components/footer.vue";
 
 const page = ref("homepage");
 const isAuthenticated = ref(false);
