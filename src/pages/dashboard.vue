@@ -4,6 +4,7 @@
     <main class="p-6 max-w-[1440px] mx-auto">
       <section class="flex justify-between items-center mb-8">
         <h1 class="text-3xl font-bold text-gray-800">Dashboard</h1>
+        <LogoutBtn />
       </section>
 
       <!-- Stats -->
@@ -14,17 +15,17 @@
           <h2 class="text-lg font-semibold">Total Tickets</h2>
           <p class="text-3xl font-bold">{{ totalTickets }}</p>
         </div>
-        <div class="bg-yellow-100 text-yellow-800 p-6 rounded-xl shadow">
+        <div class="bg-yellow-100 text-yellow-600 p-6 rounded-xl shadow">
           <h2 class="text-lg font-semibold">Open Tickets</h2>
           <p class="text-3xl font-bold">{{ openTickets }}</p>
         </div>
-        <div class="bg-purple-100 text-purple-800 p-6 rounded-xl shadow">
+        <div class="bg-green-100 text-green-800 p-6 rounded-xl shadow">
           <h2 class="text-lg font-semibold">In Progress</h2>
           <p class="text-3xl font-bold">{{ inProgressTickets }}</p>
         </div>
-        <div class="bg-green-100 text-green-800 p-6 rounded-xl shadow">
-          <h2 class="text-lg font-semibold">Resolved</h2>
-          <p class="text-3xl font-bold">{{ resolvedTickets }}</p>
+        <div class="bg-red-100 text-red-600 p-6 rounded-xl shadow">
+          <h2 class="text-lg font-semibold">Closed</h2>
+          <p class="text-3xl font-bold">{{ closedTickets }}</p>
         </div>
       </section>
 
@@ -45,10 +46,10 @@
               :class="[
                 'px-3 py-1 rounded-full text-sm font-medium',
                 ticket.status === 'Open'
-                  ? 'bg-yellow-100 text-yellow-800'
+                  ? 'bg-yellow-100 text-yellow-600'
                   : ticket.status === 'In Progress'
-                  ? 'bg-purple-100 text-purple-800'
-                  : 'bg-green-100 text-green-800',
+                  ? 'bg-green-100 text-green-800'
+                  : 'bg-red-100 text-red-600',
               ]"
             >
               {{ ticket.status }}
@@ -57,8 +58,6 @@
         </ul>
         <p v-else class="text-gray-500">No recent tickets yet.</p>
       </section>
-
-      <LogoutBtn />
     </main>
   </div>
 </template>
@@ -84,8 +83,8 @@ export default {
     inProgressTickets() {
       return this.tickets.filter((t) => t.status === "In Progress").length;
     },
-    resolvedTickets() {
-      return this.tickets.filter((t) => t.status === "Resolved").length;
+    closedTickets() {
+      return this.tickets.filter((t) => t.status === "Closed").length;
     },
     recentTickets() {
       return [...this.tickets].reverse().slice(0, 5);
