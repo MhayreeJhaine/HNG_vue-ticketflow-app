@@ -96,8 +96,8 @@
 import { ref, onMounted, h } from "vue";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
+import Header from "../components/header.vue";
+import Footer from "../components/footer.vue";
 
 const tickets = ref([]);
 const title = ref("");

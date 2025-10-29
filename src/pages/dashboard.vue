@@ -59,15 +59,17 @@
         <p v-else class="text-gray-500">No recent tickets yet.</p>
       </section>
     </main>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "../components/footer.vue";
 import Header from "../components/header.vue";
 import LogoutBtn from "../components/logoutBtn.vue";
 
 export default {
-  components: { Header, LogoutBtn },
+  components: { Header, LogoutBtn, Footer },
   data() {
     return {
       tickets: [],
